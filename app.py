@@ -16,7 +16,7 @@ port_stem = PorterStemmer()
 
 
 def stemming(content):
-    con = re.sub('[^a-zA-Z]', ' ', content)
+    con = re.sub('[^a-  -Z]', ' ', content)
     con = con.lower()
     con = con.split()
     con = [port_stem.stem(word) for word in con if not word in stopwords.words('english')]
